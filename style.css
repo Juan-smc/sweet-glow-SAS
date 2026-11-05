@@ -1,0 +1,144 @@
+body {
+    margin: 0;
+    padding-top: 0;
+    font-family: helvetica, sans-serif;
+    background-color: #f5ebe0;
+}
+section{
+    border-top: #df2d2d;
+    border-bottom: #df2d2d;
+}
+header nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header img {
+    height: 250px;
+    width: auto;
+}
+header{
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 2px solid #FF4D6D;
+    background-color: #FFCCD5;
+}
+button {
+    background-color: #FFCCD5;
+    color: #000;
+    padding: 5px 10px;
+    border: solid 2px #000;
+    border-radius: 20px;
+}
+.btn {
+    a:hover {
+        background-color: #FF4D6D;
+    }
+}
+.productos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+.producto img{
+    height: 500px;
+    width: auto;
+    align-items: center;
+}
+.producto h3{
+    text-align: center;
+}
+.Marca {
+    background-color: #FFCCD5;
+    color: #000;
+    padding: 5px 10px;
+    border: solid 2px #000;
+    border-radius: 20px;
+}
+.eslogan {
+    background-color: #df2d2d;
+    color: #fff;
+    padding: 5px 10px;
+    border: solid 2px #000;
+    border-radius: 10px;
+}
+footer {
+    padding: 40px 20px;
+    color: #17121E;
+    background-color: #FFF;
+}
+footer {
+    padding: 40px 20px;
+    color: #17121E;
+    background-color: #FFFFFF;
+}
+.footerContenido {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.footerCol {
+    flex: 1;
+    min-width: 200px;
+}
+.footerCol p {
+    color: #17121E;
+    font-size: 16px;
+}
+.footerInferior {
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid #444444;
+    font-size: 14px;
+    text-align: center;
+}
+.footerInferior p {
+    color: #17121E;
+    font-size: 14px;
+}
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px solid black;
+}
+input:hover {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.94);
+}
+h2{
+    text-align: center;
+    color: #C9184A;
+}
+header {
+    padding: 1.5rem, 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+}
+form h1{
+    text-align: center;
+    color: #C9184A;
+}
+textarea {
+    width: 100%;
+}
+table{
+    border: solid 3px;
+}
+tr{
+    border: solid 2px #000;
+    text-align: center;
+}
+td{
+    border: solid 2px #000;
+    text-align: center;
+}
