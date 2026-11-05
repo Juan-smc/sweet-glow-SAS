@@ -22,7 +22,35 @@
         <input type="text" id="metodo" name="metodo" required>
         <br>
         <button type="submit">Guardar</button>
-        <textarea id="factura" name="factura" rows="10" cols="50" readonly></textarea>
+        <h3>Datos del cliente</h3>
+        <textarea id="datos" name="datos" rows="10" cols="50" readonly></textarea>
+        <br>
+        <label for="Producto">Producto:</label>
+        <input type="text" id="Producto" name="Producto" required>
+        <br>
+        <label for="Cantidad">Cantidad:</label>
+        <input type="number" id="Cantidad" name="Cantidad" required>
+        <br>
+        <label for="Precio">Precio:</label>
+        <input type="number" id="Precio" name="Precio" required>    
+        <br>
+        <label for="DTO">Dto:</label>
+        <input type="number" id="DTO" name="DTO" readonly>
+        <br>
+        <label for="IVA">IVA:</label>
+        <input type="number" id="IVA" name="IVA" readonly>
+        <br>
+        <h3>Notas/Condiciones</h3>
+        <textarea id="notas" name="notas" rows="10" cols="50" readonly></textarea>
+        <br>
+        <label for="Subtotal">Subtotal:</label>
+        <input type="number" id="Subtotal" name="Subtotal" readonly>
+        <br>
+        <label for="Impuestos">Impuestos:</label>
+        <input type="number" id="Impuestos" name="Impuestos" readonly>
+        <br>
+        <label for="Total">Total:</label>
+        <input type="number" id="Total" name="Total" readonly>
         <br>
         <button type="button" onclick="imprimirFactura()">Imprimir</button>
     </form>
