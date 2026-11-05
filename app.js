@@ -97,3 +97,16 @@ else if (localStorage.getItem("usuario5")) {
     usuario5 = JSON.parse(localStorage.getItem("usuario5"));
     mostrarDatosUsuario();
 }
+function imprimirFactura() {
+                var cliente = document.getElementById("cliente").value;
+                var numero = document.getElementById("numero").value;
+                var fecha = document.getElementById("fecha").value;
+                var metodo = document.getElementById("metodo").value;
+
+                var factura = "Cliente: " + cliente + "\n" +
+                              "Número: " + numero + "\n" +
+                              "Fecha: " + fecha + "\n" +
+                              "Método de pago: " + metodo;
+
+                document.getElementById("factura").value = factura;
+            }

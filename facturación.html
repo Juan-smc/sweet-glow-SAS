@@ -7,6 +7,24 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <form>
+
+        <label for="cliente">Cliente :</label>
+        <input type="text" id="cliente" name="cliente" required>
+        <br>
+        <label for="numero">Numero:</label>
+        <input type="text" id="numero" name="numero" required>
+        <br>
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" name="fecha" required>
+        <br>
+        <label for="metodo">Metodo de pago:</label>
+        <input type="text" id="metodo" name="metodo" required>
+        <br>
+        <button type="submit">Guardar</button>
+        <textarea id="factura" name="factura" rows="10" cols="50" readonly></textarea>
+        <br>
+        <button type="button" onclick="imprimirFactura()">Imprimir</button>
+    </form>
 </body>
 </html>
