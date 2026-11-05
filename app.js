@@ -110,3 +110,67 @@ function imprimirFactura() {
 
                 document.getElementById("factura").value = factura;
             }
+            const $ = s => document.querySelector(s);
+const fmt = n => Math.round(n).toLocaleString('es-CO');
+const FILAS = 5;
+const tbody = $('#items tbody');
+function nuevaFila(i, datos = {}) {
+  const tr = document.createElement('tr');
+  tr.innerHTML = `
+    <td><input name="items[${i}][ref]" value="${datos.ref ?? ''}"></td>
+    <td><input name="items[${i}][desc]" value="${datos.desc ?? ''}"></td>
+    <td><input class="num cant" type="number" min="0" step="any" name="items[${i}][cant]" value="${datos.cant ?? ''}"></td>
+    <td><input class="num precio" type="number" min="0" step="any" name="items[${i}][precio]" value="${datos.precio ?? ''}"></td>
+    <td class="total">-</td>`;
+  tbody.appendChild(tr);
+}
+function aLetras(n) {
+  const U = ['','uno','dos','tres','cuatro','cinco','seis','siete','ocho','nueve','diez','once','doce','trece','catorce','quince','dieciséis','diecisiete','dieciocho','diecinueve','veinte','veintiuno','veintidós','veintitrés','veinticuatro','veinticinco','veintiséis','veintisiete','veintiocho','veintinueve'];
+  const D = ['','','','treinta','cuarenta','cincuenta','sesenta','setenta','ochenta','noventa'];
+  const C = ['','ciento','doscientos','trescientos','cuatrocientos','quinientos','seiscientos','setecientos','ochocientos','novecientos'];
+  const menor1000 = x => {
+    if (x === 100) return 'cien';
+    const c = Math.floor(x / 100), r = x % 100;
+    let t = C[c] ? C[c] + ' ' : '';
+    if (r < 30) t += U[r];
+    else t += D[Math.floor(r / 10)] + (r % 10 ? ' y ' + U[r % 10] : '');
+    return t.trim();
+  };
+  if (n === 0) return 'cero';
+  const mill = Math.floor(n / 1e6), mil = Math.floor((n % 1e6) / 1000), resto = n % 1000;
+  let t = '';
+  if (mill) t += (mill === 1 ? 'un millón' : menor1000(mill) + ' millones') + ' ';
+  if (mil) t += (mil === 1 ? 'mil' : menor1000(mil).replace(/uno$/, 'ún') + ' mil') + ' ';
+  if (resto) t += menor1000(resto);
+  return t.trim();
+}
+function calcular() {
+  let subtotal = 0;
+  tbody.querySelectorAll('tr').forEach(tr => {
+    const c = parseFloat(tr.querySelector('.cant').value) || 0;
+    const p = parseFloat(tr.querySelector('.precio').value) || 0;
+    const t = c * p;
+    tr.querySelector('.total').textContent = t ? fmt(t) : '-';
+    subtotal += t;
+  });
+  const iva = subtotal * (parseFloat($('#tasa').value) || 0) / 100;
+  const total = subtotal + iva;
+  $('#subtotal').textContent = fmt(subtotal);
+  $('#iva').textContent = fmt(iva);
+  $('#total').textContent = fmt(total);
+  const letras = aLetras(Math.round(total));
+  $('#letras').textContent = letras.charAt(0).toUpperCase() + letras.slice(1) + ' pesos M/CTE';
+}
+nuevaFila(0, {ref: '1', desc: 'Detalles personalizados', cant: 3, precio: 360000});
+for (let i = 1; i < FILAS; i++) nuevaFila(i);
+$('#agregar').addEventListener('click', () => { nuevaFila(tbody.children.length); });
+$('#factura').addEventListener('input', calcular);
+const hoy = new Date();
+const iso = d => d.toISOString().slice(0, 10);
+$('#f_exp').value = iso(hoy);
+const venc = new Date(hoy); venc.setDate(venc.getDate() + 30);
+$('#f_ven').value = iso(venc);
+document.querySelectorAll('input[name="pago"]').forEach(r => r.addEventListener('change', () => {
+  $('#f_ven').value = r.value === 'contado' ? iso(hoy) : iso(venc);
+}));
+calcular();

@@ -1,0 +1,342 @@
+  :root{
+    --azul:#a9cfe3;
+    --azul-claro:#e6f0f5;
+    --linea:#5b6770;
+    --rojo:#c0392b;
+    --tinta:#1d2429;
+    --papel:#f4f8fa;
+  }
+  *{
+    box-sizing:border-box
+}
+  body{
+    margin:0;
+    padding:24px;
+    background:#dfe6ea;
+    font-family:Calibri,"Segoe UI",Arial,sans-serif;
+    color:var(--tinta);
+    font-size:13px
+}
+  .factura{
+    display:grid;
+    grid-template-columns:44px 1fr;
+    max-width:1000px;
+    margin:0 auto;
+    background:var(--papel);
+    border:1.5px solid var(--linea)
+}
+  .lateral{
+    background:var(--azul);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-right:1.5px solid var(--linea)
+}
+  .lateral span{writing-mode:vertical-rl;
+    text-orientation:upright;
+    letter-spacing:.35em;
+    font-weight:700;
+    font-size:13px
+}
+  .cuerpo{
+    min-width:0
+}
+  input,select{
+    font:inherit;
+    color:inherit;
+    background:transparent;
+    border:0;
+    border-bottom:1px dashed #9aa7ae;
+    padding:2px 4px;
+    width:100%;
+    min-width:0
+}
+  input:focus{
+    outline:2px solid #2b7fa8;
+    outline-offset:1px;
+    background:#fff
+}
+  .num{
+    text-align:right
+}
+  label{
+    font-size:11px;
+    font-weight:700
+}
+  .encabezado{
+    display:grid;
+    grid-template-columns:150px 1fr 1fr;
+    border-bottom:1.5px solid var(--linea)
+}
+  .logo{
+    border-right:1.5px solid var(--linea);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:10px
+}
+  .logo div{
+    width:110px;
+    height:130px;
+    border:2px solid #a8324a;
+    border-radius:55px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:#a8324a;
+    font-weight:700;
+    font-size:12px;
+    padding:8px
+}
+  .empresa{
+    padding:10px 14px;
+    display:grid;
+    gap:4px;
+    align-content:start
+}
+  .empresa h1{
+    margin:0 0 4px;
+    font-size:19px;
+    text-align:center
+}
+  .empresa .fila{
+    display:grid;
+    grid-template-columns:90px 1fr;
+    align-items:center
+}
+  .titulo{
+    border-left:1.5px solid var(--linea);
+    display:grid;
+    grid-template-rows:auto 1fr
+}
+  .titulo h2{
+    margin:0;
+    padding:14px 10px;
+    text-align:center;
+    font-size:17px;
+    border-bottom:1.5px solid var(--linea);
+    background:var(--azul-claro)
+}
+  .titulo .datos{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:6px 14px;
+    padding:10px 14px;
+    align-content:center
+}
+  .rojo{
+    color:var(--rojo)
+}
+  .nit{
+    font-size:20px;
+    font-weight:700
+} 
+  .resolucion{
+    display:grid;
+    grid-template-columns:1fr 280px;
+    gap:10px;
+    padding:8px 14px;
+    border-bottom:1.5px solid var(--linea);
+    font-size:11px
+}
+  .resolucion .centro{
+    text-align:center
+}
+  .fechas{
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:4px 8px;
+    align-items:center
+}
+  .cliente{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:6px 24px;
+    padding:10px 14px;
+    border-bottom:1.5px solid var(--linea)
+}
+  .campo{
+    display:grid;
+    grid-template-columns:90px 1fr;
+    align-items:center;
+    gap:6px
+}
+  .pago{
+    display:flex;
+    align-items:center;
+    gap:14px
+}
+  .pago label{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    font-size:12px;
+    font-weight:400
+}
+  .pago input{
+    width:auto
+}
+  table{
+    width:100%;
+    border-collapse:collapse
+}
+  th,td{
+    border:1px solid var(--linea);
+    padding:3px 6px
+}
+  th{background:var(--azul-claro);
+    font-size:11px;
+    text-align:center
+}
+  td.total{
+    text-align:right;
+    font-variant-numeric:tabular-nums;
+    white-space:nowrap
+}
+  .tabla-wrap{
+    overflow-x:auto
+}
+  .pie{
+    display:grid;
+    grid-template-columns:1fr 330px;
+    border-top:1.5px solid var(--linea)
+}
+  .qr{
+    display:grid;
+    grid-template-columns:110px 1fr;
+    border-right:1.5px solid var(--linea)
+}
+  .qr .codigo{padding:8px;
+    border-right:1px solid var(--linea)
+}
+  .qr .codigo div{
+    width:94px;
+    height:94px;background: repeating-conic-gradient(var(--tinta) 0 25%,#fff 0 50%) 0 0/12px 12px;opacity:.85}
+  .qr .info{padding:8px 10px;
+    display:grid;
+    gap:6px;
+    align-content:start
+}
+  .letras{
+    padding:8px 10px;
+    border-top:1px solid var(--linea);
+    grid-column:1/-1;
+    min-height:46px
+}
+  .letras strong{
+    display:block;
+    margin-bottom:2px
+}
+  .sumas{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-content:stretch
+}
+  .sumas>div{
+    padding:8px 10px;
+    border-bottom:1px solid var(--linea);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:6px
+}
+  .sumas .etq{
+    background:var(--azul);
+    font-weight:700
+}
+  .sumas .valor{
+    justify-content:flex-end;
+    font-variant-numeric:tabular-nums;
+    font-weight:700;
+    font-size:15px
+}
+  .sumas .grande{
+    font-size:18px
+}
+  .sumas .iva input{
+    width:48px;
+    text-align:right
+}
+  .ley{
+    border-top:1.5px solid var(--linea);
+    text-align:center;
+    font-weight:700;font-style:italic;
+    font-size:11px;
+    padding:4px
+}
+  .firmas{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    border-top:1px solid var(--linea)
+  }
+  .firmas div{
+    height:70px;
+    padding:6px 10px;
+    font-size:11px;
+    text-align:center
+  }
+  .firmas div+div{
+    border-left:1px solid var(--linea)
+  }
+  .impreso{
+    padding:6px 14px;
+    font-size:10px;
+    text-align:center;
+    border-top:1px solid var(--linea)
+  }
+
+  .acciones{
+    max-width:1000px;
+    margin:16px auto 0;
+    display:flex;
+    gap:10px;
+    justify-content:flex-end
+  }
+  button{
+    font:inherit;
+    font-weight:700;
+    padding:9px 18px;
+    border:1.5px solid var(--linea);
+    background:#fff;
+    cursor:pointer
+}
+  button.principal{
+    background:#2b7fa8;
+    border-color:#2b7fa8;
+    color:#fff
+}
+  button:focus-visible{
+    outline:3px solid #1b5a7a;
+    outline-offset:2px
+} 
+  @media (max-width:760px){
+    body{
+        padding:8px
+    }
+    .encabezado,.resolucion,.cliente,.pie,.qr{
+        grid-template-columns:1fr
+    }
+    .logo,.titulo{
+        border:0;
+        border-bottom:1.5px solid var(--linea)
+    }
+    .qr{
+        border-right:0
+    }
+  }
+  @media print{
+    body{
+        background:#fff;
+        padding:0
+    }
+    .acciones{
+        display:none
+    }
+    input{
+        border-bottom-color:transparent
+    }
+    .factura{
+        border-width:1px
+    }
+  }

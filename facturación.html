@@ -7,13 +7,24 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form>
-
+    <main>
+        <h1>FACTURA ELECTRÓNICA DE VENTA</h1>
+        <form>
+        <section id="cabecera">
+            <img src="imagenes/logo.png" alt="Logo de Sweet Glow" width="100">
+        <h2>Sweet Glow SAS</h2>
+        <div class="numero-factura">
+            <p>No. de factura: <span id="numeroFactura"></span></p>
+        </div>
+        <div class="informacion-empresa">
+            <p>Dirección: Calle 123</p>
+            <p>ciudad<strong>BOGOTÁ</strong></p>
+            <p>Teléfono: +57 123 456 7890</p>
+            <p>Email: sweetglow@gmail.com</p>
+        </div>
         <label for="cliente">Cliente :</label>
         <input type="text" id="cliente" name="cliente" required>
         <br>
-        <label for="numero">Numero:</label>
-        <input type="text" id="numero" name="numero" required>
         <br>
         <label for="fecha">Fecha:</label>
         <input type="date" id="fecha" name="fecha" required>
