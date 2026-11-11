@@ -1,0 +1,110 @@
+/* ==========================================
+   PEGAR AL FINAL DE factura.css  💗
+   Cambia los colores azules por rosados sin
+   tocar el diseño de la factura
+   ========================================== */
+
+/* Las variables de arriba del archivo se reemplazan por estas */
+:root {
+    --azul: #F9C6D8;
+    --azul-claro: #FDEBF1;
+    --linea: #B5707F;
+    --rojo: #82001A;
+    --tinta: #3a2a30;
+    --papel: #FFFBFC;
+}
+
+body {
+    background-color: #FFF0F5;
+    background-image: radial-gradient(#F9CFDD 20%, transparent 21%);
+    background-size: 30px 30px;
+    font-family: "Oswald", "Segoe UI", Arial, sans-serif;
+}
+
+/* Menú de arriba */
+header {
+    max-width: 1000px;
+    margin: 0 auto 20px;
+    padding: 6px 20px;
+    background-color: #F8E8EC;
+    border: 3px solid #F09BB8;
+    border-radius: 30px;
+    box-shadow: 6px 6px 0 #E8C5CE;
+}
+
+header img {
+    height: 80px;
+    width: auto;
+    border-radius: 50%;
+}
+
+header h1 {
+    margin: 0;
+    color: #82001A;
+}
+
+header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header nav a {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #fff;
+    color: #82001A;
+    border: 2px solid #F09BB8;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+header nav a:hover {
+    background-color: #F09BB8;
+}
+
+/* La factura */
+.factura {
+    border: 3px solid #F09BB8;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 8px 8px 0 #E8C5CE;
+}
+
+input:focus {
+    outline: 2px solid #F09BB8;
+}
+
+/* Botones */
+button {
+    border: 2px solid #82001A;
+    color: #82001A;
+    border-radius: 50px;
+    background: #fff;
+}
+
+button:hover {
+    background-color: #F8E8EC;
+}
+
+button.principal {
+    background-color: #F09BB8;
+    border-color: #82001A;
+    color: #82001A;
+}
+
+button:focus-visible {
+    outline: 3px solid #82001A;
+}
+
+@media (max-width: 760px) {
+    .header-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
