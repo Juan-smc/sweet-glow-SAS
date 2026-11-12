@@ -78,7 +78,7 @@ const formContacto = $("#contactoForm");
 if (formContacto) {
     formContacto.addEventListener("submit", e => {
         e.preventDefault();
-        alert("¡Gracias por escribirnos! Pronto te respondemos 💗");
+        alert("¡Gracias por escribirnos! Pronto te respondemos");
         window.location.href = "index.html";
     });
 }
