@@ -1,14 +1,7 @@
-/* ==========================================
-   SWEET GLOW - app.js
-   Cada parte solo corre en la página que la necesita
-   ========================================== */
-
 const $ = s => document.querySelector(s);
 
 
-/* ===== PERFIL DEL TRABAJADOR (user.html) ===== */
-
-// Lista de trabajadores (por ahora todos ven el mismo perfil)
+// Lista de trabajadores 
 const trabajadores = [
     { nombre: "Gabriela Royero", correo: "gabriela.royero@sweetglow.com", telefono: "+57 123 456 7890", cargo: "Gerente" },
     { nombre: "Erick Cuervo", correo: "erick.cuervo@sweetglow.com", telefono: "+57 123 456 7890", cargo: "Responsable de caja menor" },
@@ -17,7 +10,6 @@ const trabajadores = [
     { nombre: "Luis Martínez", correo: "luis.martinez@sweetglow.com", telefono: "+57 123 456 7890", cargo: "Subgerente" }
 ];
 
-// Si alguien se registró, mostramos sus datos. Si no, el primero de la lista.
 let usuario = trabajadores[0];
 if (localStorage.getItem("usuario")) {
     usuario = JSON.parse(localStorage.getItem("usuario"));
@@ -32,8 +24,6 @@ function mostrarDatosUsuario() {
 }
 mostrarDatosUsuario();
 
-
-/* ===== REGISTRO (form.html) ===== */
 
 const formRegistro = $("#registroForm");
 if (formRegistro) {
@@ -60,19 +50,15 @@ if (formRegistro) {
 }
 
 
-/* ===== INICIO DE SESION (inicio_sesion.html) ===== */
+/* ===== INICIO DE SESION ===== */
 
 const formLogin = $("#loginForm");
 if (formLogin) {
     formLogin.addEventListener("submit", e => {
         e.preventDefault();
-        // por ahora todos van al mismo perfil
         window.location.href = "user.html";
     });
 }
-
-
-/* ===== CONTACTO (contacto.html) ===== */
 
 const formContacto = $("#contactoForm");
 if (formContacto) {
@@ -82,9 +68,6 @@ if (formContacto) {
         window.location.href = "index.html";
     });
 }
-
-
-/* ===== INVENTARIO (inventario.html) ===== */
 
 let inventario = [
     { nombre: "Estilo 1", precio: 5000, cantidad: 1 },
@@ -107,7 +90,7 @@ function celda(texto) {
 
 function mostrarInventario() {
     const tabla = $("#tablaInventario");
-    if (!tabla) return; // esta página no tiene inventario
+    if (!tabla) return; 
     tabla.innerHTML = "";
 
     inventario.forEach((producto, index) => {
@@ -156,7 +139,7 @@ if (formInventario) {
 mostrarInventario();
 
 
-/* ===== FACTURACION (facturacion.html) ===== */
+/* ===== FACTURACION ===== */
 
 if ($("#items")) {
     const fmt = n => Math.round(n).toLocaleString("es-CO");
@@ -219,7 +202,7 @@ if ($("#items")) {
     $("#agregar").addEventListener("click", () => nuevaFila(tbody.children.length));
     $("#factura").addEventListener("input", calcular);
 
-    // fechas con la hora local (toISOString podía adelantar un día en la noche)
+    // fechas con la hora local 
     const hoy = new Date();
     const iso = d => d.toLocaleDateString("en-CA");
     const venc = new Date(hoy);
