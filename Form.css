@@ -29,6 +29,10 @@ body {
     overflow-x: hidden;
 }
 
+img {
+    max-width: 250px;
+    height: auto;
+}
 /* burbujas decorativas */
 body::before,
 body::after {
